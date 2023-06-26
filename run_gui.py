@@ -40,7 +40,7 @@ def getDistance(imageUrl):
 
 def submit():
     # Get the value from the input field
-    input_value = input_field.get()
+    input_value = pyperclip.paste()
 
     # Call the function with the input value
     output_value = getDistance(input_value)
@@ -63,12 +63,9 @@ def copy_to_clipboard():
 # Create the main window
 root = tk.Tk()
 
-# Create the input field
-input_field = tk.Entry(root)
-input_field.pack()
 
 # Create the submit button
-submit_button = tk.Button(root, text="Submit", command=submit)
+submit_button = tk.Button(root, text="Get URL From Clipboard", command=submit)
 submit_button.pack()
 
 # Create the output text field
